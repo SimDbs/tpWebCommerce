@@ -5,6 +5,8 @@
 <%@ page import="commerce.catalogue.domaine.modele.Livre"%>
 <%@ page import="commerce.catalogue.domaine.modele.Musique"%>
 <%@ page import="commerce.catalogue.domaine.modele.Piste"%>
+<%@ page import="commerce.gestion.Panier"%>
+<%@ page import="commerce.gestion.LignePanier"%>
 <%@ page import="java.util.Iterator"%>
 <%@ page import="java.util.List"%>
 <%
@@ -34,6 +36,21 @@
 		<li id="menu-item-290"
 			class="menu-item menu-item-type-custom menu-item-object-custom">
 			<a href="<%=response.encodeURL("./controlePanier.jsp")%>">Panier</a>
+			<% 
+			if (session.getAttribute("panier") != null) {
+				Panier lePanier = (Panier) session.getAttribute("panier");
+				List<LignePanier> lignesPanier = lePanier.getLignesPanier();
+				if(lignesPanier.size() != 0){
+					int nbElem = 0;
+					for(LignePanier ligne : lignesPanier){
+						nbElem += ligne.getQuantite();
+					}	
+			%>
+					<p class="nbArticle"><%= nbElem %></p>
+			<%
+				}
+			}
+			%>
 		</li>
 	</ul>
 	<div class="searchDiv">

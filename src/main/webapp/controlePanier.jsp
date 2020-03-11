@@ -22,6 +22,8 @@
 				unArticle = catalogueManager
 						.chercherArticleParRef(refArticle);
 				lePanier.ajouterLigne(unArticle);
+				response.sendRedirect("./index.jsp");
+				return;
 			} else if (commande.equals("recalculerPanier")) {
 				it = lePanier.getLignesPanier().iterator();
 				LignePanier uneLignePanier;

@@ -12,3 +12,17 @@
 .searchButton{
 	margin-bottom: 0;
 }
+
+.nbArticle{
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	background-color: #3688fe;
+	border-radius: 10px;
+	color: white;
+	padding-left: 2px;
+	padding-right: 2px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
