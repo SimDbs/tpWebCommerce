@@ -1,0 +1,14 @@
+.searchDiv{
+	position : absolute;
+	right: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.searchInput{
+	margin-bottom: 0;
+}
+
+.searchButton{
+	margin-bottom: 0;
+}
