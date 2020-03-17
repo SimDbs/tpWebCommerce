@@ -5,6 +5,7 @@
 <%@ page import="commerce.gestion.Panier"%>
 <%@ page import="commerce.gestion.LignePanier"%>
 <%@ page import="java.util.Iterator"%>
+<%@ page import="java.util.List"%>
 <%
 	if (session.getAttribute("panier") == null) {
 		response.sendRedirect("./index.jsp");
@@ -17,12 +18,40 @@
 	<ul id="main-nav" class="nav fl">
 		<li id="menu-item-290"
 			class="menu-item menu-item-type-custom menu-item-object-custom">
-			<a href="<%=response.encodeURL("./afficheRecherche.jsp")%>">Rechercher
-				un article</a>
+			<a href="<%=response.encodeURL("./afficheRecherche.jsp")%>">Accueil</a>
+		</li>
+		<li id="menu-item-290"
+			class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
+			<a href="<%=response.encodeURL("./afficheRecherche.jsp")%>">Catalogue</a>
+			<ul>
+				<li>
+					<a>Toutes les catégories</a>
+				</li>
+				<li>
+					<a>Musique</a>
+				</li>
+				<li>
+					<a>Livre</a>
+				</li>
+			</ul>
 		</li>
 		<li id="menu-item-290"
 			class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
 			<a href="<%=response.encodeURL("./controlePanier.jsp")%>">Panier</a>
+			<% 
+			if (session.getAttribute("panier") != null) {
+				List<LignePanier> LesLignesDuPanier = lePanier.getLignesPanier();
+				if(LesLignesDuPanier.size() != 0){
+					int nbElem = 0;
+					for(LignePanier ligne : LesLignesDuPanier){
+						nbElem += ligne.getQuantite();
+					}	
+			%>
+					<p class="nbArticle"><%= nbElem %></p>
+			<%
+				}
+			}
+			%>
 		</li>
 	</ul>
 </nav>
