@@ -4,10 +4,10 @@
 	<ul id="main-nav" class="nav fl">
 		<li id="menu-item-290"
 			class="menu-item menu-item-type-custom menu-item-object-custom">
-			<a href="<%=response.encodeURL("./afficheRecherche.jsp")%>">Accueil</a>
+			<a href="<%=response.encodeURL("./accueil.jsp")%>">Accueil</a>
 		</li>
 		<li id="menu-item-290"
-			class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
+			class="menu-item menu-item-type-custom menu-item-object-custom">
 			<a href="<%=response.encodeURL("./afficheRecherche.jsp")%>">Catalogue</a>
 			<ul>
 				<li>

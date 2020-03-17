@@ -6,5 +6,5 @@
     Panier lePanier = new Panier() ;
     session.setAttribute("panier", lePanier) ;
   }
-  response.sendRedirect(response.encodeURL("afficheRecherche.jsp")) ;
+  response.sendRedirect(response.encodeURL("accueil.jsp")) ;
 %>
